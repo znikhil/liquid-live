@@ -1,0 +1,39 @@
+{
+  "name": "samvad-ai",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Samvad AI: video-call a private AI that runs on your own computer, as an assistant or an English tutor.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "scripts": {
+    "build": "vite build",
+    "start": "node --env-file-if-exists=.env server/main.ts --open",
+    "serve": "node --env-file-if-exists=.env server/main.ts",
+    "dev": "vite build --watch --mode development & node --env-file-if-exists=.env --watch-path=server --watch-path=shared server/main.ts",
+    "setup": "node server/setup/main.ts",
+    "typecheck": "tsc -p server && tsc -p web"
+  },
+  "dependencies": {
+    "onnxruntime-node": "1.30.0",
+    "sherpa-onnx-node": "2.0.1",
+    "ws": "8.18.0"
+  },
+  "devDependencies": {
+    "@myned-ai/gsplat-flame-avatar-renderer": "1.4.0",
+    "@types/node": "22.15.3",
+    "@types/react": "18.3.12",
+    "@types/react-dom": "18.3.1",
+    "@types/ws": "8.18.1",
+    "@vitejs/plugin-react": "4.3.3",
+    "lucide-react": "0.453.0",
+    "onnxruntime-web": "1.30.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "three": "0.186.1",
+    "typescript": "5.8.3",
+    "vite": "5.4.10"
+  }
+}
